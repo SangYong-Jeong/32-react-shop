@@ -1,6 +1,7 @@
 import React from 'react';
+import styled, { css } from '../style/index';
+
 import TestNavi from '../components/TestNavi';
-import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
   max-width: 1200px;

@@ -1,13 +1,14 @@
 import React from 'react';
+import styled from '../style/index';
+
 import TestNavi from '../components/TestNavi';
-import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
   max-width: 1200px;
   margin: auto;
 `;
 
-const Main = () => {
+const MyOrder = () => {
   return (
     <Wrapper>
       <TestNavi />
@@ -16,4 +17,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MyOrder;
