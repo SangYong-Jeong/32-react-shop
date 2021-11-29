@@ -6,14 +6,14 @@ const ListWrap = styled.li`
   width: 33.3333%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const Title = styled.h3`
   padding: 0.5em 0;
-  text-align: center;
   font-weight: 500;
   display: block;
+  transition: all 0.5s;
   &:hover {
     color: ${color.danger};
   }
@@ -21,9 +21,9 @@ const Title = styled.h3`
 
 const List = styled.a`
   padding: 0.25em 0;
-  text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   display: block;
+  color: ${color.lightBlack};
 `
   .withComponent(Underline)
   .withComponent(Link);
