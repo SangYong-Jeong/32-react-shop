@@ -1,11 +1,10 @@
 import React from 'react';
-import styled, { css } from '../style/index';
+import styled, { Container } from '../style/index';
 
 import HeaderCp from '../components/inc/HeaderCp';
 // import TestNavi from '../components/TestNavi';
 
-const Wrapper = styled.div`
-  max-width: 1200px;
+const Wrapper = styled(Container)`
   margin: auto;
 `;
 
