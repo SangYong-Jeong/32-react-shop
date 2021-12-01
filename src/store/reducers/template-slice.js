@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 /** state ***************/
-const state = {};
+const initialState = {};
 
 /** async action ********/
 export const 비동기액션 = createAsyncThunk('네임/액션명', async (매개변수) => {
@@ -14,7 +14,7 @@ export const 비동기액션 = createAsyncThunk('네임/액션명', async (매�
 /** reducer *************/
 export const 슬라이스네임 = createSlice({
   name: '네임',
-  state,
+  initialState,
   reducers: {
     동기액션: () => {},
   },
