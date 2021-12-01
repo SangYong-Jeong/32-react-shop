@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
-import styled, { Underline, Underline2 } from '../../style';
 
+import styled, { Underline } from '../../style';
 import SubAllCp from './SubAllCp';
 import SubCp from './SubCp';
 
@@ -17,15 +17,12 @@ const TitleLink = styled(Underline)``.withComponent(Link);
 
 const NaviCp = ({ data, type }) => {
   const [show, setShow] = useState(false);
-
   const onMouseEnter = useCallback((e) => {
     setShow(true);
   }, []);
-
   const onMouseLeave = useCallback((e) => {
     setShow(false);
   }, []);
-
   return (
     <li>
       {type === 'A' ? (
