@@ -30,7 +30,7 @@ const NaviCp = ({ data, type }) => {
           <TitleLink to="/" color="#333">
             {data.title}
           </TitleLink>
-          <SubCp />
+          <SubCp data={data.children} />
         </TitleWrapRel>
       )}
     </li>
