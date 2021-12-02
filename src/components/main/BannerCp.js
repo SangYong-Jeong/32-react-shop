@@ -1,36 +1,25 @@
-import React from 'react';
-import Slider from 'react-slick';
+import React from 'react'
+import styled from '../../style'
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+const Wrapper = styled.div`
+  position: relative;
+`
+const Contents = styled.ul`
+  border: 10px solid red;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+`
 
-const BannerCp = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+const BannerCp = ({ title, price, content, link, file }) => {
   return (
-    <Slider {...settings}>
-      <div>
-        <img
-          src="/img/banner-slider-1.jpg"
-          className="w100"
-          alt="Main Banner"
-        />
-      </div>
-      <div>
-        <img
-          src="/img/banner-slider-1.jpg"
-          className="w100"
-          alt="Main Banner"
-        />
-      </div>
-    </Slider>
-  );
-};
+    <Wrapper>
+      <Contents></Contents>
+      <img src={file} className="w100" alt={title} />
+    </Wrapper>
+  )
+}
 
-export default React.memo(BannerCp);
+export default BannerCp

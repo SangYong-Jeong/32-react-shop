@@ -1,44 +1,44 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
 
-/** state ***************/
+/** state *************/
 const initialState = {
   selTree: '',
   allTree: [],
-};
+}
 
-/** async action ********/
+/** async action ******/
 export const getAllTree = createAsyncThunk('tree/asyncTree', async () => {
-  const url = 'http://127.0.0.1:3100/api/tree';
-  const { data } = await axios.get(url);
+  const url = process.env.REACT_APP_CATE_URL
+  const { data } = await axios.get(url)
   const tree = data[0].children.map((v) => {
-    let children = v.children.map((v2) => ({ id: v2.id, title: v2.text }));
-    return { id: v.id, title: v.text, children };
-  });
-  return tree;
-});
+    let children = v.children.map((v2) => ({ id: v2.id, title: v2.text }))
+    return { id: v.id, title: v.text, children }
+  })
+  return tree
+})
 
-/** reducer *************/
+/** reducer ***********/
 export const treeSlice = createSlice({
   name: 'tree',
   initialState,
   reducers: {
     setTree: (state, { payload }) => {
-      state.selTree = payload;
+      state.selTree = payload
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getAllTree.fulfilled, (state, { payload }) => {
         // console.log('fulfilled', payload);
-        state.allTree = payload;
+        state.allTree = payload
       })
       .addCase(getAllTree.rejected, (state, { payload }) => {
-        console.log('rejected', payload);
-      });
+        console.log('rejected', payload)
+      })
   },
-});
+})
 
-/** method **************/
-export const { setTree } = treeSlice.actions;
-export default treeSlice.reducer;
+/** method ************/
+export const { setTree } = treeSlice.actions
+export default treeSlice.reducer

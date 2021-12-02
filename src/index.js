@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { store } from './store';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import { store } from './store'
 
-import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux'
+import * as serviceWorker from './serviceWorker'
 
 // import './assets/css/all.min.css';
-import 'bootstrap/scss/bootstrap-utilities.scss';
 // import './assets/css/bootstrap.min.css';
-import './assets/css/base.css';
+import 'bootstrap/scss/bootstrap-utilities.scss'
+import './assets/css/base.css'
+require('dotenv').config()
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,6 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
 
-serviceWorker.unregister();
+serviceWorker.unregister()
