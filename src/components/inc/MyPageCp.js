@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 import {
   Search,
   FavoriteBorder,
   ShoppingCartOutlined,
-} from '@mui/icons-material';
+} from '@mui/icons-material'
 
-import styled from '../../style';
+import styled from '../../style'
 
 const MyPageCp = () => {
   return (
@@ -14,7 +14,7 @@ const MyPageCp = () => {
       <FavoriteBorder />
       <ShoppingCartOutlined />
     </div>
-  );
-};
+  )
+}
 
-export default MyPageCp;
+export default React.memo(MyPageCp)

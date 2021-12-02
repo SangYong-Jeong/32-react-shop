@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from '../style/index';
+import React from 'react'
+import styled from '../style/index'
 
-import TestNavi from '../components/TestNavi';
+import TestNavi from '../components/TestNavi'
 
 const Wrapper = styled.div`
   max-width: 1200px;
   margin: auto;
-`;
+`
 
 const PrdList = () => {
   return (
@@ -14,7 +14,7 @@ const PrdList = () => {
       <TestNavi />
       <h1>Product List</h1>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default PrdList;
+export default React.memo(PrdList)

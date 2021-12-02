@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { filePath } from '../../modules/util'
+
+import { filePath } from './util'
 
 export const bannerApi = async (id) => {
   try {

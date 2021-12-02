@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from '../style/index';
+import React from 'react'
+import styled from '../style/index'
 
-import TestNavi from '../components/TestNavi';
+import TestNavi from '../components/TestNavi'
 
 const Wrapper = styled.div`
   max-width: 1200px;
   margin: auto;
-`;
+`
 
 const AuthLogin = () => {
   return (
@@ -14,7 +14,7 @@ const AuthLogin = () => {
       <TestNavi />
       <h1>AuthLogin</h1>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default AuthLogin;
+export default React.memo(AuthLogin)

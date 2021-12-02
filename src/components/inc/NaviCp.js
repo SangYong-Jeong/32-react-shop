@@ -1,28 +1,28 @@
-import React, { useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useCallback, useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import styled, { Underline } from '../../style';
-import SubAllCp from './SubAllCp';
-import SubCp from './SubCp';
+import styled, { Underline } from '../../style'
+import SubAllCp from './SubAllCp'
+import SubCp from './SubCp'
 
 const TitleWrap = styled.div`
   padding: 1em;
-`;
+`
 
 const TitleWrapRel = styled(TitleWrap)`
   position: relative;
-`;
+`
 
-const TitleLink = styled(Underline)``.withComponent(Link);
+const TitleLink = styled(Underline)``.withComponent(Link)
 
 const NaviCp = ({ data, type }) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
   const onMouseEnter = useCallback((e) => {
-    setShow(true);
-  }, []);
+    setShow(true)
+  }, [])
   const onMouseLeave = useCallback((e) => {
-    setShow(false);
-  }, []);
+    setShow(false)
+  }, [])
   return (
     <li>
       {type === 'A' ? (
@@ -41,7 +41,7 @@ const NaviCp = ({ data, type }) => {
         </TitleWrapRel>
       )}
     </li>
-  );
-};
+  )
+}
 
-export default NaviCp;
+export default React.memo(NaviCp)

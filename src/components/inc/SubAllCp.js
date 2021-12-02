@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 import styled, {
   Container,
   SmallContainer,
   AnimationWrapper,
-} from '../../style';
-import ImageCp from '../common/ImageCp';
-import SubAllNaviCp from './SubNaviCp';
+} from '../../style'
+import ImageCp from '../common/ImageCp'
+import SubAllNaviCp from './SubNaviCp'
 
 const Wrapper = styled(AnimationWrapper)`
   width: 100%;
@@ -16,7 +16,7 @@ const Wrapper = styled(AnimationWrapper)`
   left: 0;
   top: 3em;
   background-color: #fff;
-`;
+`
 
 const Wrap = styled(SmallContainer)`
   padding-top: 2.5em;
@@ -28,12 +28,12 @@ const Wrap = styled(SmallContainer)`
   > :nth-of-type(2) {
     width: 40%;
   }
-`;
+`
 
 const SubWrap = styled.ul`
   display: flex;
   flex-wrap: wrap;
-`;
+`
 
 const SubAllCp = ({ data }) => {
   return (
@@ -56,7 +56,7 @@ const SubAllCp = ({ data }) => {
         </Wrap>
       </Container>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default SubAllCp;
+export default React.memo(SubAllCp)

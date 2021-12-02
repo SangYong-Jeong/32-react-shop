@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled, { Underline, color } from '../../style';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styled, { Underline, color } from '../../style'
 
 const ListWrap = styled.li`
   width: 33.3333%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`;
+`
 
 const Title = styled.h3`
   padding: 0.5em 0;
@@ -17,7 +17,7 @@ const Title = styled.h3`
   &:hover {
     color: ${color.danger};
   }
-`.withComponent(Link);
+`.withComponent(Link)
 
 const List = styled.a`
   padding: 0.25em 0;
@@ -26,7 +26,7 @@ const List = styled.a`
   color: ${color.lightBlack};
 `
   .withComponent(Underline)
-  .withComponent(Link);
+  .withComponent(Link)
 
 const SubAllNaviCp = ({ data }) => {
   return (
@@ -38,7 +38,7 @@ const SubAllNaviCp = ({ data }) => {
         </List>
       ))}
     </ListWrap>
-  );
-};
+  )
+}
 
-export default SubAllNaviCp;
+export default React.memo(SubAllNaviCp)

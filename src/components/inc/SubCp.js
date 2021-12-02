@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled, { Underline, color, AnimationWrapper } from '../../style';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styled, { Underline, color, AnimationWrapper } from '../../style'
 
 const ListWrap = styled(AnimationWrapper)`
   min-width: 150px;
@@ -10,7 +10,7 @@ const ListWrap = styled(AnimationWrapper)`
   left: 0;
   background-color: #ffffff;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-`;
+`
 
 const List = styled.div`
   font-weight: 400;
@@ -18,12 +18,12 @@ const List = styled.div`
   display: block;
   color: ${color.primary};
   border-bottom: 1px solid #ccc;
-`;
+`
 const LinkWrap = styled.a`
   display: inline-block;
 `
   .withComponent(Underline)
-  .withComponent(Link);
+  .withComponent(Link)
 
 const SubCp = ({ data }) => {
   return (
@@ -36,7 +36,7 @@ const SubCp = ({ data }) => {
         </List>
       ))}
     </ListWrap>
-  );
-};
+  )
+}
 
-export default SubCp;
+export default React.memo(SubCp)
