@@ -4,6 +4,7 @@ import styled, { media } from '../../style';
 
 import ImageCp from '../common/ImageCp';
 import VideoCp from '../common/VideoCp';
+import ButtonCp from '../common/ButtonCp';
 import { filePath } from '../../modules/util';
 
 const Wrapper = styled.li`
@@ -29,14 +30,14 @@ const Wrapper = styled.li`
 
 const ImageWrapper = styled.div`
   position: relative;
-  & :nth-of-type(2) {
+  & > :nth-of-type(2) {
     position: absolute;
     top: 0;
     opacity: 0;
     transition: all 0.5s;
   }
   &:hover {
-    & :nth-of-type(2) {
+    & > :nth-of-type(2) {
       opacity: 1;
     }
   }
@@ -51,19 +52,22 @@ const PrdCp = ({ title, ProductFiles }) => {
           src={filePath(ProductFiles[0].saveName)}
           width="100%"
         />
-        {ProductFiles[1].saveName.includes('.mp4') ? (
-          <VideoCp
-            alt={title}
-            src={filePath(ProductFiles[1].saveName)}
-            width="100%"
-          />
-        ) : (
-          <ImageCp
-            alt={title}
-            src={filePath(ProductFiles[1].saveName)}
-            width="100%"
-          />
-        )}
+        <div>
+          {ProductFiles[1].saveName.includes('.mp4') ? (
+            <VideoCp
+              alt={title}
+              src={filePath(ProductFiles[1].saveName)}
+              width="100%"
+            />
+          ) : (
+            <ImageCp
+              alt={title}
+              src={filePath(ProductFiles[1].saveName)}
+              width="100%"
+            />
+          )}
+          <ButtonCp txt="ADD TO CART" />
+        </div>
       </ImageWrapper>
     </Wrapper>
   );

@@ -19,7 +19,7 @@ const ImageCp = ({
     <div className={className}>
       {link ? (
         <Link to={link}>
-          <Img src={src} alt={alt} width={width} />
+          <Img src={src} alt={alt} />
         </Link>
       ) : (
         <Img src={src} alt={alt} width={width} />
@@ -28,4 +28,4 @@ const ImageCp = ({
   );
 };
 
-export default ImageCp;
+export default React.memo(ImageCp);
