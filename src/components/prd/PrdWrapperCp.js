@@ -10,7 +10,7 @@ const Wrapper = styled.ul`
   margin-top: 1em;
   display: flex;
   flex-wrap: wrap;
-  overflow-x: hidden;
+  overflow: hidden;
   @media ${media.md} {
     width: 101.5%;
   }

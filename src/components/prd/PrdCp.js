@@ -1,13 +1,16 @@
 import React from 'react';
 
-import styled, { media } from '../../style';
+import styled, { color, media } from '../../style';
 
 import ImageCp from '../common/ImageCp';
 import VideoCp from '../common/VideoCp';
 import ButtonCp from '../common/ButtonCp';
+import FavoriteCp from '../common/FavoriteCp';
+import LocationCp from './LocationCp';
 import { filePath } from '../../modules/util';
 
 const Wrapper = styled.li`
+  position: relative;
   cursor: pointer;
   width: 19%;
   margin: 0 1% 1% 0;
@@ -28,6 +31,19 @@ const Wrapper = styled.li`
   }
 `;
 
+const InfoWrap = styled.div`
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+const FavoriteWrap = styled.div`
+  position: absolute;
+  top: 1em;
+  left: 1em;
+`;
+
 const ImageWrapper = styled.div`
   position: relative;
   & > :nth-of-type(2) {
@@ -41,6 +57,15 @@ const ImageWrapper = styled.div`
       opacity: 1;
     }
   }
+`;
+
+const ButtonWrapper = styled.div`
+  padding: 0.5em;
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 `;
 
 const PrdCp = ({ title, ProductFiles }) => {
@@ -66,9 +91,24 @@ const PrdCp = ({ title, ProductFiles }) => {
               width="100%"
             />
           )}
-          <ButtonCp txt="ADD TO CART" />
+          <ButtonWrapper>
+            <ButtonCp
+              txt="ADD TO CART"
+              link="//naver.com"
+              width="100%"
+              colorHover={color.info}
+              bgHover={color.dark}
+              bold="bold"
+            />
+          </ButtonWrapper>
         </div>
       </ImageWrapper>
+      <FavoriteWrap>
+        <FavoriteCp size="1em" />
+      </FavoriteWrap>
+      <InfoWrap>
+        <LocationCp location="Surf - 남성의류" />
+      </InfoWrap>
     </Wrapper>
   );
 };
