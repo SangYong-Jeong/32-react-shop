@@ -17,7 +17,7 @@ const Favorite = styled.div`
   color: ${(props) => props.color};
 `;
 
-const FavoriteCp = ({ size }) => {
+const FavoriteCp = ({ size, className }) => {
   const [like, setLike] = useState(false);
   const [color, setColor] = useState('#222');
   // click DB 미구현
@@ -30,7 +30,13 @@ const FavoriteCp = ({ size }) => {
   );
 
   return (
-    <Favorite size={size} onClick={onClick} like={like} color={color}>
+    <Favorite
+      className={className}
+      size={size}
+      onClick={onClick}
+      like={like}
+      color={color}
+    >
       <FavoriteBorder />
     </Favorite>
   );

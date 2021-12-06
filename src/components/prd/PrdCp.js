@@ -38,7 +38,7 @@ const InfoWrap = styled.div`
   align-items: flex-start;
 `;
 
-const FavoriteWrap = styled.div`
+const Favorite = styled(FavoriteCp)`
   position: absolute;
   top: 1em;
   left: 1em;
@@ -103,9 +103,7 @@ const PrdCp = ({ title, ProductFiles }) => {
           </ButtonWrapper>
         </div>
       </ImageWrapper>
-      <FavoriteWrap>
-        <FavoriteCp size="1em" />
-      </FavoriteWrap>
+      <Favorite size="1em" />
       <InfoWrap>
         <LocationCp location="Surf - 남성의류" />
       </InfoWrap>
