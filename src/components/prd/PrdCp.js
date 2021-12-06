@@ -3,6 +3,7 @@ import React from 'react';
 import styled, { media } from '../../style';
 
 import ImageCp from '../common/ImageCp';
+import VideoCp from '../common/VideoCp';
 import { filePath } from '../../modules/util';
 
 const Wrapper = styled.li`
@@ -50,11 +51,19 @@ const PrdCp = ({ title, ProductFiles }) => {
           src={filePath(ProductFiles[0].saveName)}
           width="100%"
         />
-        <ImageCp
-          alt={title}
-          src={filePath(ProductFiles[1].saveName)}
-          width="100%"
-        />
+        {ProductFiles[1].saveName.includes('.mp4') ? (
+          <VideoCp
+            alt={title}
+            src={filePath(ProductFiles[1].saveName)}
+            width="100%"
+          />
+        ) : (
+          <ImageCp
+            alt={title}
+            src={filePath(ProductFiles[1].saveName)}
+            width="100%"
+          />
+        )}
       </ImageWrapper>
     </Wrapper>
   );
