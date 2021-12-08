@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styled, { color, media } from '../../style';
 
@@ -68,7 +69,29 @@ const ButtonWrapper = styled.div`
   left: 0;
 `;
 
-const PrdCp = ({ title, ProductFiles, Cates }) => {
+const PrdCp = ({
+  title,
+  star: starData,
+  priceOrigin,
+  priceSale,
+  ProductFiles,
+  Cates,
+  Color,
+  Section,
+}) => {
+  /* state  */
+  const [location, setLocation] = useState('Shop');
+  const [color, setColor] = useState([]);
+  const [section, setSection] = useState([]);
+  const [star, setStar] = useState(0.0);
+
+  const colors = useSelector((state) => state.color.allColor);
+  const sections = useSelector((state) => state.color.allSection);
+
+  /* 데이터 가공  */
+  useEffect(() => {}, [colors, sections, Cates]);
+
+  /* render  */
   return (
     <Wrapper>
       <ImageWrapper>
@@ -105,9 +128,7 @@ const PrdCp = ({ title, ProductFiles, Cates }) => {
       </ImageWrapper>
       <Favorite size="1em" />
       <InfoWrap>
-        <LocationCp
-          cateId={Cates[Math.floor(Math.random() * Cates.length)].cid}
-        />
+        <LocationCp />
       </InfoWrap>
     </Wrapper>
   );
