@@ -1,14 +1,15 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-import styled, { color, media } from '../../style';
+import styled, { media, font } from '../../style';
+import { filePath } from '../../modules/util';
 
 import ImageCp from '../common/ImageCp';
 import VideoCp from '../common/VideoCp';
 import ButtonCp from '../common/ButtonCp';
 import FavoriteCp from '../common/FavoriteCp';
 import LocationCp from './LocationCp';
-import { filePath } from '../../modules/util';
+import TitleCp from './TitleCp';
 
 const Wrapper = styled.li`
   position: relative;
@@ -37,6 +38,7 @@ const InfoWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-family: ${font.en};
 `;
 
 const Favorite = styled(FavoriteCp)`
@@ -76,8 +78,8 @@ const PrdCp = ({
   priceSale,
   ProductFiles,
   Cates,
-  Color,
-  Section,
+  Colors,
+  Sections,
 }) => {
   /* state  */
   const [location, setLocation] = useState('Shop');
@@ -85,13 +87,21 @@ const PrdCp = ({
   const [section, setSection] = useState([]);
   const [star, setStar] = useState(0.0);
 
+  const trees = useSelector((state) => state.tree.allTree);
   const colors = useSelector((state) => state.color.allColor);
-  const sections = useSelector((state) => state.color.allSection);
-
+  const sections = useSelector((state) => state.section.allSection);
+  console.log(Cates);
   /* 데이터 가공  */
   useEffect(() => {
-    // let myColor = colors.filter(v => {})
-  }, [colors, sections, Cates]);
+    let cates = Cates[0].parents.split(',');
+    let _location = 'Shop';
+    if (cates[0]) {
+      let [{ title }] = trees.filter((v) => v.id === cates[0]);
+      _location += ' - ' + title;
+    }
+    _location += ' - ' + Cates[0].name;
+    setLocation(_location);
+  }, [Cates, trees]);
 
   /* render  */
   return (
@@ -130,7 +140,8 @@ const PrdCp = ({
       </ImageWrapper>
       <Favorite size="1em" />
       <InfoWrap>
-        <LocationCp />
+        <LocationCp title={location} />
+        <TitleCp title={title} />
       </InfoWrap>
     </Wrapper>
   );
