@@ -68,7 +68,7 @@ const ButtonWrapper = styled.div`
   left: 0;
 `;
 
-const PrdCp = ({ title, ProductFiles }) => {
+const PrdCp = ({ title, ProductFiles, Cates }) => {
   return (
     <Wrapper>
       <ImageWrapper>
@@ -105,7 +105,9 @@ const PrdCp = ({ title, ProductFiles }) => {
       </ImageWrapper>
       <Favorite size="1em" />
       <InfoWrap>
-        <LocationCp location="Surf - 남성의류" />
+        <LocationCp
+          cateId={Cates[Math.floor(Math.random() * Cates.length)].cid}
+        />
       </InfoWrap>
     </Wrapper>
   );
