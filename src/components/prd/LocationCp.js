@@ -11,7 +11,6 @@ const Location = styled(Underline)`
 const LocationCp = ({ cateId }) => {
   const [treeName, setTreeName] = useState('');
   const allTree = useSelector((state) => state.tree.allTree);
-  console.log(cateId);
   useEffect(() => {
     // const [{ title }] = allTree.filter((v) => v.id === cateId);
     // setTreeName('Shop - ' + title);
