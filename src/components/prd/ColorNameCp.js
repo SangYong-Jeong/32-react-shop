@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from '../../style';
+import styled, { color } from '../../style';
 
-const ColorName = styled.li`
-  width: 80px;
+const ColorName = styled.div`
+  width: 60px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

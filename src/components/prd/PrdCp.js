@@ -96,25 +96,24 @@ const PrdCp = ({
   /* 데이터 가공 ********/
   useEffect(() => {
     // location
-    let cates = Cates[0].parents.split(',');
+    console.log(Cates, Colors);
     let _location = 'Shop';
-    if (cates[0]) {
-      let [{ title: _title }] = trees.filter((v) => v.id === cates[0]);
-      _location += ' - ' + _title;
+    if (Cates.length) {
+      let cates = Cates[0].parents ? Cates[0].parents.split(',') : [];
+      let data = trees.filter((v) => v.id === cates[0]);
+      if (data.length) _location += ' - ' + data[0].title;
     }
     _location += ' - ' + Cates[0].name;
     setLocation(_location);
-
-    //colorName
-    if (Colors[0]) {
-      setColorName(Colors[0].name);
-      setColorCode(Colors[0].code);
-    }
+    // colorName/Code
+    if (Colors.length) setColorName(Colors[0].name);
+    if (Colors.length) setColorCode(Colors[0].code);
   }, [Cates, trees, Colors]);
 
-  /* Event */
-  const listenClick = useCallback((id) => {
-    console.log(id);
+  /* Event ********/
+  const listenClick = useCallback((_name, _color) => {
+    setColorName(_name);
+    setColorCode(_color);
   }, []);
 
   /* render ********/
