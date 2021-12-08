@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import styled, { media, font } from '../../style';
+import styled, { color, font, media } from '../../style';
 import { filePath } from '../../modules/util';
 
 import ImageCp from '../common/ImageCp';
@@ -74,25 +74,25 @@ const ButtonWrapper = styled.div`
 const PrdCp = ({
   title,
   star: starData,
+  price,
   priceOrigin,
-  priceSale,
-  ProductFiles,
   Cates,
   Colors,
   Sections,
+  ProductFiles,
 }) => {
-  /* state  */
+  /* state ********/
   const [location, setLocation] = useState('Shop');
   const [color, setColor] = useState([]);
   const [section, setSection] = useState([]);
   const [star, setStar] = useState(0.0);
-
   const trees = useSelector((state) => state.tree.allTree);
   const colors = useSelector((state) => state.color.allColor);
   const sections = useSelector((state) => state.section.allSection);
-  console.log(Cates);
-  /* 데이터 가공  */
+
+  /* 데이터 가공 ********/
   useEffect(() => {
+    // 복잡한 곳
     let cates = Cates[0].parents.split(',');
     let _location = 'Shop';
     if (cates[0]) {
@@ -103,7 +103,7 @@ const PrdCp = ({
     setLocation(_location);
   }, [Cates, trees]);
 
-  /* render  */
+  /* render ********/
   return (
     <Wrapper>
       <ImageWrapper>
@@ -129,7 +129,6 @@ const PrdCp = ({
           <ButtonWrapper>
             <ButtonCp
               txt="ADD TO CART"
-              link="//naver.com"
               width="100%"
               colorHover={color.info}
               bgHover={color.dark}
