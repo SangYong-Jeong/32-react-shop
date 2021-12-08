@@ -89,7 +89,9 @@ const PrdCp = ({
   const sections = useSelector((state) => state.color.allSection);
 
   /* 데이터 가공  */
-  useEffect(() => {}, [colors, sections, Cates]);
+  useEffect(() => {
+    // let myColor = colors.filter(v => {})
+  }, [colors, sections, Cates]);
 
   /* render  */
   return (
