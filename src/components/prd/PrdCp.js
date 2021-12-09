@@ -14,6 +14,7 @@ import PriceCp from './PriceCp';
 import ColorCp from './ColorCp';
 import ColorNameCp from './ColorNameCp';
 import StarCp from './StarCp';
+import SectionCp from './SectionCp';
 
 const Wrapper = styled.li`
   position: relative;
@@ -60,7 +61,17 @@ const ImageWrapper = styled.div`
   }
 `;
 
+const SectionWrapper = styled.div`
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
 const HoverImg = styled.div`
+  display: block;
   transition: opacity 0.5s;
   opacity: 0;
   &:hover {
@@ -121,6 +132,7 @@ const PrdCp = ({
     (_name, _color, _id) => {
       setColorName(_name);
       setColorCode(_color);
+      // 보여주기
       if (_id == 0) setImgSrc(ProductFiles[0].saveName);
       else if (_id < 4) setImgSrc(ProductFiles[Number(_id) + 1].saveName);
       else setImgSrc(ProductFiles[4].saveName);
@@ -165,6 +177,11 @@ const PrdCp = ({
             bold="bold"
           />
         </ButtonWrapper>
+        <SectionWrapper>
+          {Sections.map((v, i) => (
+            <SectionCp {...v} key={i} />
+          ))}
+        </SectionWrapper>
       </ImageWrapper>
       <Favorite size="1em" />
       <InfoWrap>
