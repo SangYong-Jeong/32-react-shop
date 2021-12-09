@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { Container, css } from '../style';
+import styled, { Container } from '../style';
 
 import HeaderCp from '../components/header/HeaderCp';
 import BannerWrapperCp from '../components/main/BannerWrapperCp';
