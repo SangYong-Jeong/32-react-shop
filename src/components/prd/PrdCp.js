@@ -13,6 +13,7 @@ import TitleCp from './TitleCp';
 import PriceCp from './PriceCp';
 import ColorCp from './ColorCp';
 import ColorNameCp from './ColorNameCp';
+import StarCp from './StarCp';
 
 const Wrapper = styled.li`
   position: relative;
@@ -80,7 +81,7 @@ const ButtonWrapper = styled.div`
 
 const PrdCp = ({
   title,
-  star: starData,
+  star,
   priceSale,
   priceOrigin,
   Cates,
@@ -176,6 +177,7 @@ const PrdCp = ({
             ''
           )}
         </div>
+        <StarCp point={star} />
         <PriceCp price={priceSale} />
         {Colors.length ? (
           <ColorCp colors={Colors} listenClick={listenClick} />
