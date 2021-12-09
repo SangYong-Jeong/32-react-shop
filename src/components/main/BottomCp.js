@@ -8,15 +8,15 @@ const Wrapper = styled.section`
   margin-top: 1em;
 `;
 
-const ParallaxCp = ({ id }) => {
+const BottomCp = () => {
   const [banner, setBanner] = useState(null);
   useEffect(() => {
     (async () => {
-      const [data] = await bannerApi(id);
+      const [data] = await bannerApi(243);
       setBanner(data);
     })();
   }, []);
   return <Wrapper>{banner ? <BannerCp {...banner} /> : ''}</Wrapper>;
 };
 
-export default React.memo(ParallaxCp);
+export default React.memo(BottomCp);
