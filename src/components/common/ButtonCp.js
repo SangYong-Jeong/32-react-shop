@@ -4,11 +4,12 @@ import styled from '../../style';
 
 const Button = styled.div`
   cursor: pointer;
-  text-align: center;
-  width: ${(props) => props.width};
+  width: 100%;
   display: inline-block;
+  text-align: center;
   padding: 1em;
   border-radius: 5px;
+  width: ${(props) => props.width};
   color: ${(props) => props.color};
   background-color: ${(props) => props.bg};
   border-width: 1px;
@@ -27,7 +28,6 @@ const Button = styled.div`
 const ButtonCp = ({
   txt = 'button',
   txtHover,
-  link,
   color = '#000',
   colorHover,
   bg = 'transparent',
@@ -37,12 +37,15 @@ const ButtonCp = ({
   width = 'auto',
   size = '1em',
   bold = 'normal',
+  className,
+  onClick,
 }) => {
   txtHover = txtHover || txt;
   colorHover = colorHover || color;
   bgHover = bgHover || bg;
   borderHover = borderHover || border;
-  const navigate = useNavigate();
+
+  // const navigate = useNavigate();
 
   const onEnter = useCallback(
     (e) => {
@@ -58,18 +61,11 @@ const ButtonCp = ({
     [txt]
   );
 
-  const onClick = useCallback(
-    (e) => (link ? navigate(link) : null),
-    [link, navigate]
-  );
-
   return (
     <Button
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      onClick={onClick}
       bg={bg}
-      width={width}
       bgHover={bgHover}
       border={border}
       borderHover={borderHover}
@@ -77,6 +73,8 @@ const ButtonCp = ({
       colorHover={colorHover}
       size={size}
       bold={bold}
+      className={className}
+      onClick={onClick}
     >
       {txt}
     </Button>
