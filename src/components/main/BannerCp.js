@@ -1,36 +1,36 @@
-import React from 'react'
-import Button from '@mui/material/Button'
-import styled, { css, color, font } from '../../style'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import Button from '@mui/material/Button';
+import styled, { css, color, font } from '../../style';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   position: relative;
   font-family: ${font.en};
-`
+`;
 
 const positionStyle = ({ pos }) => {
   if (pos === 'L')
     return css`
-      left: 10%;
+      left: 5%;
       top: 50%;
       transform: translateY(-50%);
       text-align: left;
-    `
+    `;
   else if (pos === 'R')
     return css`
-      right: 10%;
+      right: 5%;
       top: 50%;
       transform: translateY(-50%);
       text-align: right;
-    `
+    `;
   else
     return css`
       left: 50%;
       bottom: 10%;
       transform: translateX(-50%);
       text-align: center;
-    `
-}
+    `;
+};
 
 const Contents = styled.ul`
   max-width: 400px;
@@ -38,28 +38,28 @@ const Contents = styled.ul`
   position: absolute;
   padding: 2em;
   ${positionStyle}
-`
+`;
 
 const Title = styled.h3`
   font-size: 2.5em;
   font-weight: bold;
   color: ${color.black};
   margin-bottom: 0.75em;
-`
+`;
 
 const Price = styled.div`
   font-size: 1.5em;
   font-weight: bold;
   color: ${color.primary};
   margin-bottom: 1.5em;
-`
+`;
 
 const Content = styled.div`
   font-size: 1.125em;
   line-height: 1.5em;
   color: ${color.dark};
   margin-bottom: 1.5em;
-`
+`;
 
 const BannerCp = ({ title, price, content, link = '/', file, pos }) => {
   return (
@@ -80,7 +80,7 @@ const BannerCp = ({ title, price, content, link = '/', file, pos }) => {
       </Contents>
       <img src={file} className="w100" alt={title} />
     </Wrapper>
-  )
-}
+  );
+};
 
-export default React.memo(BannerCp)
+export default React.memo(BannerCp);
