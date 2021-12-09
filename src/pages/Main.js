@@ -1,11 +1,12 @@
 import React from 'react';
-import styled, { Container, css } from '../style';
+import styled, { Container } from '../style';
 
 import HeaderCp from '../components/header/HeaderCp';
 import BannerWrapperCp from '../components/main/BannerWrapperCp';
 import NoticeWrapperCp from '../components/main/NoticeWrapperCp';
 import ParallaxCp from '../components/main/ParallaxCp';
 import PrdWrapperCp from '../components/prd/PrdWrapperCp';
+import SurfWrapperCp from '../components/prd/SurfWrapperCp';
 
 const Wrapper = styled(Container)`
   margin: auto;
@@ -25,6 +26,7 @@ const Main = () => {
       <ParallaxCp id="242" />
       <PrdWrapperCp />
       <BottomParallax id="243" />
+      <SurfWrapperCp />
     </Wrapper>
   );
 };

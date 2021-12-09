@@ -4,15 +4,14 @@ import styled, { color, font, media } from '../../style';
 import ImageCp from '../common/ImageCp';
 import TitleCp from './TitleCp';
 import PriceCp from './PriceCp';
+import ContentCp from './ContentCp';
 
 const Wrapper = styled.li`
+  border: 1px solid red;
   position: relative;
   cursor: pointer;
-  width: 19%;
+  width: 24%;
   margin: 0 1% 1% 0;
-  @media ${media.lg} {
-    width: 24%;
-  }
   @media ${media.md} {
     width: 31.8333%;
     margin: 0 1.5% 1.5% 0;
@@ -31,16 +30,18 @@ const InfoWrap = styled.div`
   padding: 1em 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   font-family: ${font.en};
+  text-align: center;
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
-  & > :nth-of-type(2) {
-    position: absolute;
-    top: 0;
-    opacity: 0;
+  text-align: center;
+  > div {
+    img {
+      max-width: 70px;
+    }
   }
 `;
 
@@ -53,7 +54,8 @@ const SurfCp = ({ title, price, content, src, link }) => {
       </ImageWrapper>
       <InfoWrap>
         <TitleCp title={title} />
-        <PriceCp price={price} />
+        <ContentCp content={content} />
+        <PriceCp price={price} size="0.875em" />
       </InfoWrap>
     </Wrapper>
   );
