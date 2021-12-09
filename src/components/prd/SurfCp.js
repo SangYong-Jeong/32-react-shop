@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styled, { color, font, media } from '../../style';
 
 import ImageCp from '../common/ImageCp';
@@ -7,7 +8,6 @@ import PriceCp from './PriceCp';
 import ContentCp from './ContentCp';
 
 const Wrapper = styled.li`
-  border: 1px solid red;
   position: relative;
   cursor: pointer;
   width: 24%;
@@ -46,11 +46,10 @@ const ImageWrapper = styled.div`
 `;
 
 const SurfCp = ({ title, price, content, src, link }) => {
-  /* render ********/
   return (
     <Wrapper>
       <ImageWrapper>
-        <ImageCp alt={title} src={src} width="100%" />
+        <ImageCp alt={title} src={src} />
       </ImageWrapper>
       <InfoWrap>
         <TitleCp title={title} />

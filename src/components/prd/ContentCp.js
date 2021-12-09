@@ -10,7 +10,7 @@ const Content = styled.div`
 `;
 
 const ContentCp = ({ content, size = '1em' }) => {
-  return <Content size={size}>{content}</Content>;
+  return <Content size={size}>${content}</Content>;
 };
 
 export default React.memo(ContentCp);
