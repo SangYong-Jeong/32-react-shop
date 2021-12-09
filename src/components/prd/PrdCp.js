@@ -56,12 +56,14 @@ const ImageWrapper = styled.div`
     position: absolute;
     top: 0;
     opacity: 0;
-    transition: all 0.5s;
   }
+`;
+
+const HoverImg = styled.div`
+  transition: opacity 0.5s;
+  opacity: 0;
   &:hover {
-    & > :nth-of-type(2) {
-      opacity: 1;
-    }
+    opacity: 1;
   }
 `;
 
@@ -72,6 +74,8 @@ const ButtonWrapper = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
+  transition: all 0.5s;
+  opacity: ${(props) => props.isEnter};
 `;
 
 const PrdCp = ({
@@ -86,12 +90,12 @@ const PrdCp = ({
 }) => {
   /* state ********/
   const [location, setLocation] = useState('Shop');
+  const [imgSrc, setImgSrc] = useState('');
   const [colorName, setColorName] = useState('');
   const [colorCode, setColorCode] = useState('');
   // const [section, setSection] = useState([]);
+  const [isEnter, setIsEnter] = useState(0);
   const trees = useSelector((state) => state.tree.allTree);
-  const colors = useSelector((state) => state.color.allColor);
-  const sections = useSelector((state) => state.section.allSection);
 
   /* 데이터 가공 ********/
   useEffect(() => {
@@ -108,24 +112,35 @@ const PrdCp = ({
     // colorName/Code
     if (Colors.length) setColorName(Colors[0].name);
     if (Colors.length) setColorCode(Colors[0].code);
-  }, [Cates, trees, Colors]);
+    if (ProductFiles.length) setImgSrc(ProductFiles[0].saveName);
+  }, [Cates, trees, Colors, ProductFiles]);
 
   /* Event ********/
-  const listenClick = useCallback((_name, _color) => {
-    setColorName(_name);
-    setColorCode(_color);
+  const listenClick = useCallback(
+    (_name, _color, _id) => {
+      setColorName(_name);
+      setColorCode(_color);
+      if (_id == 0) setImgSrc(ProductFiles[0].saveName);
+      else if (_id < 4) setImgSrc(ProductFiles[Number(_id) + 1].saveName);
+      else setImgSrc(ProductFiles[4].saveName);
+    },
+    [ProductFiles]
+  );
+
+  const onEnter = useCallback((e) => {
+    setIsEnter(1);
+  }, []);
+
+  const onLeave = useCallback((e) => {
+    setIsEnter(0);
   }, []);
 
   /* render ********/
   return (
-    <Wrapper>
+    <Wrapper onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <ImageWrapper>
-        <ImageCp
-          alt={title}
-          src={filePath(ProductFiles[0].saveName)}
-          width="100%"
-        />
-        <div>
+        <ImageCp alt={title} src={filePath(imgSrc)} width="100%" />
+        <HoverImg>
           {ProductFiles[1].saveName.includes('.mp4') ? (
             <VideoCp
               alt={title}
@@ -139,16 +154,16 @@ const PrdCp = ({
               width="100%"
             />
           )}
-          <ButtonWrapper>
-            <ButtonCp
-              txt="ADD TO CART"
-              width="100%"
-              colorHover={color.info}
-              bgHover={color.dark}
-              bold="bold"
-            />
-          </ButtonWrapper>
-        </div>
+        </HoverImg>
+        <ButtonWrapper isEnter={isEnter}>
+          <ButtonCp
+            txt="ADD TO CART"
+            width="100%"
+            colorHover={color.info}
+            bgHover={color.dark}
+            bold="bold"
+          />
+        </ButtonWrapper>
       </ImageWrapper>
       <Favorite size="1em" />
       <InfoWrap>
