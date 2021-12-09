@@ -27,13 +27,14 @@ export const bannerApi = async (id) => {
 
 export const prdApi = async (options = {}) => {
   try {
-    let { cid, grp, field, search, sort } = options;
+    let { cid, section, field, search, sort, page } = options;
     let query = '?';
     if (cid) query += '&cid=' + cid;
-    if (grp) query += '&grp=' + grp;
+    if (section) query += '&section=' + section;
     if (field) query += '&field=' + field;
     if (search) query += '&search=' + search;
     if (sort) query += '&sort=' + sort;
+    if (page) query += '&page=' + page;
     console.log(query);
     const { data } = await axios.get(process.env.REACT_APP_PRD_URL + query);
     console.log(data);

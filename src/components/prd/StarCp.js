@@ -21,7 +21,8 @@ const GoldStar = styled(DefaultStar)`
   top: 0;
   left: 0;
   color: #f58f00;
-  width: ${(props) => props.point + 'em'};
+  width: ${(props) =>
+    props.point + 'em'}; /* 총 width 5em 에서 몇 em인지 에따라 보이게 설정 */
 `;
 
 const StarCp = ({ point }) => {
