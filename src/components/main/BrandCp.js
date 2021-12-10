@@ -24,7 +24,7 @@ const BrandCp = () => {
   const [brand, setBrand] = useState([]);
   useEffect(() => {
     (async () => {
-      setBrand(await brandApi(4));
+      setBrand(await brandApi(3));
     })();
   }, []);
   return (
