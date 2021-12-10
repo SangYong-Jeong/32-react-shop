@@ -14,7 +14,7 @@ const withBannerWrapper = (OriginComponent) => {
     const combineProps = { ...props, banner };
     return <OriginComponent className={props.className} {...combineProps} />;
   };
-  return Component;
+  return React.memo(Component);
 };
 
 export default withBannerWrapper;
