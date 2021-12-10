@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { Container } from '../style';
+import styled, { Container, css } from '../style';
 
 import HeaderCp from '../components/header/HeaderCp';
 import BannerWrapperCp from '../components/main/BannerWrapperCp';
@@ -28,9 +28,9 @@ const Main = () => {
         <CenterParallaxCp id="243" />
         <SurfWrapperCp />
       </Container>
-      <RideWrapperCp id="ride" />
+      <RideWrapperCp model="ride" id="244" />
       <Container>
-        <InstaWrapperCp id="insta" />
+        <InstaWrapperCp model="insta" id="245" />
       </Container>
     </Wrapper>
   );

@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import Slider from 'react-slick'
+import React, { useEffect, useState } from 'react';
+import Slider from 'react-slick';
 
-import styled from '../../style'
-import { bannerApi } from '../../modules/api'
+import styled from '../../style';
+import { bannerApi } from '../../modules/api';
 
-import BannerCp from './BannerCp'
+import BannerCp from './BannerCp';
 
 const Wrapper = styled.section`
   width: 100%;
   overflow-x: hidden;
   padding-bottom: 3em;
-`
+`;
 
 const BannerWrapperCp = () => {
-  const [banner, setBanner] = useState([])
+  const [banner, setBanner] = useState([]);
   useEffect(() => {
-    ;(async () => setBanner(await bannerApi(241)))()
-  }, [])
+    (async () => setBanner(await bannerApi(241)))();
+  }, []);
 
   const settings = {
     dots: true,
@@ -25,7 +25,8 @@ const BannerWrapperCp = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-  }
+    dotsClass: 'slick-dots-banner',
+  };
   return (
     <Wrapper>
       <Slider {...settings}>
@@ -34,7 +35,7 @@ const BannerWrapperCp = () => {
         ))}
       </Slider>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default React.memo(BannerWrapperCp)
+export default React.memo(BannerWrapperCp);
