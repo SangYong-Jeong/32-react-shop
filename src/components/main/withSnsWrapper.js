@@ -20,6 +20,24 @@ const sns = {
       title: 'Indonesia',
       content: 'Next trip: 18 July 2021 / 3 - 5 Weeks',
     },
+    {
+      id: 4,
+      src: '/img/201206_1222.jpg',
+      title: 'Indonesia',
+      content: 'Next trip: 18 July 2021 / 3 - 5 Weeks',
+    },
+    {
+      id: 5,
+      src: '/img/201206_1223.jpg',
+      title: 'Indonesia',
+      content: 'Next trip: 18 July 2021 / 3 - 5 Weeks',
+    },
+    {
+      id: 6,
+      src: '/img/201206_1225.jpg',
+      title: 'Indonesia',
+      content: 'Next trip: 18 July 2021 / 3 - 5 Weeks',
+    },
   ],
   insta: [
     {
@@ -54,7 +72,8 @@ const slideConfig = {
   infinite: true,
   autoplay: true,
   speed: 500,
-  slidesToShow: 1,
+  autoplaySpeed: 4000,
+  slidesToShow: 3,
   slidesToScroll: 1,
 };
 
