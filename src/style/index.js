@@ -23,6 +23,7 @@ export const color = {
   grey: '#555',
   success: '#34BE82',
   primary: '#396EB0',
+  cyan: '#72D1C6',
 };
 
 export const size = {
