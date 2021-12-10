@@ -13,7 +13,7 @@ import TitleCp from './TitleCp';
 import PriceCp from './PriceCp';
 import ColorCp from './ColorCp';
 import ColorNameCp from './ColorNameCp';
-import StarCp from './StarCp';
+import StarCp from '../common/StarCp';
 import SectionCp from './SectionCp';
 
 const Wrapper = styled.li`
@@ -112,7 +112,7 @@ const PrdCp = ({
   /* 데이터 가공 ********/
   useEffect(() => {
     // location
-    console.log(Cates, Colors);
+    // console.log(Cates, Colors);
     let _location = 'Shop';
     if (Cates.length) {
       let cates = Cates[0].parents ? Cates[0].parents.split(',') : [];

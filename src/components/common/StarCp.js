@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import styled, { color, font, media } from '../../style';
 
 const Wrapper = styled.div`
-  font-size: 1.25em;
+  font-size: ${({ size }) => size + 'em'};
   position: relative;
 `;
 
 const DefaultStar = styled.div`
   display: flex;
   color: #bbb;
-  span {
+  & span {
     width: 1em;
     flex-shrink: 0;
   }
@@ -21,13 +21,12 @@ const GoldStar = styled(DefaultStar)`
   top: 0;
   left: 0;
   color: #f58f00;
-  width: ${(props) =>
-    props.point + 'em'}; /* 총 width 5em 에서 몇 em인지 에따라 보이게 설정 */
+  width: ${(props) => props.point + 'em'};
 `;
 
-const StarCp = ({ point }) => {
+const StarCp = ({ point, size = '1.25', className }) => {
   return (
-    <Wrapper>
+    <Wrapper size={size} className={className}>
       <DefaultStar>
         <span>★</span>
         <span>★</span>

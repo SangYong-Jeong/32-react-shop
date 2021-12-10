@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import styled, { media, font, color, css } from '../../style';
-import FadeLoader from 'react-spinners/FadeLoader';
 
+import withPrdWrapper from './withPrdWrapper';
 import { prdApi } from '../../modules/api';
 import PrdCp from './PrdCp';
 import ButtonCp from '../common/ButtonCp';
@@ -44,47 +44,14 @@ const loaderCss = css`
   height: 80px;
 `;
 
-const PrdWrapperCp = () => {
-  const [prd, setPrd] = useState([]);
-  const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      setPrd(await prdApi({ page: 1 }));
-    })();
-  }, []);
-
-  const onClick = useCallback(async () => {
-    setIsLoading(true);
-    setPage(page + 1);
-    setPrd([...prd, ...(await prdApi({ page }))]);
-    setIsLoading(false);
-  }, [page, prd]);
-
+const PrdWrapperCp = (props) => {
   return (
-    <div>
-      <Title>New Products</Title>
-      <PrdWrapper>
-        {prd.map((v, i) => (
-          <PrdCp {...v} key={i} />
-        ))}
-      </PrdWrapper>
-      <FadeLoader
-        color={color.primary}
-        loading={isLoading}
-        css={loaderCss}
-        size={60}
-      />
-      <Button
-        txt="SHOW MORE"
-        colorHover={color.light}
-        bgHover={color.dark}
-        bold="bold"
-        onClick={onClick}
-      />
-    </div>
+    <PrdWrapper>
+      {props.prd.map((v, i) => (
+        <PrdCp {...v} key={i} />
+      ))}
+    </PrdWrapper>
   );
 };
 
-export default React.memo(PrdWrapperCp);
+export default withPrdWrapper(React.memo(PrdWrapperCp));
