@@ -6,6 +6,7 @@ const Wrapper = styled(Underline)`
   display: inline-block;
   line-height: 1.25em;
   margin-bottom: 0.75em;
+  font-size: 0.85em;
 `;
 
 const ContentUnderlineCp = ({ txt, link }) => {

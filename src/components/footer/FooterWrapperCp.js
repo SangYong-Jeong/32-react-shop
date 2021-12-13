@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
   background-color: #1a1a1a;
   color: #fff;
   font-family: ${font.en};
-  padding: 4em 0;
+  padding-top: 4em;
 `;
 
 const Wrap = styled(Container)`
@@ -92,10 +92,7 @@ const FooterWrapperCp = () => {
         <MenuWrapCp {...menus[2]} />
         <EmailWrapCp />
       </Wrap>
-      <Container>
-        <CopyrightCp />
-        <CardCp />
-      </Container>
+      <CopyrightCp />
     </Wrapper>
   );
 };
