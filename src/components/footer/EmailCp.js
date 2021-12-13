@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiFilledInput-root': {
       background: '#fff',
-      borderRadius: '8px',
     },
     marginRight: '0.5em',
   },
@@ -22,20 +21,17 @@ const useStyles = makeStyles((theme) => ({
 
 const EmailCp = () => {
   const classes = useStyles();
-
-  const emailRef = useRef();
-
+  const emailRef = useRef(null);
   const onSubmit = useCallback(async () => {
     const email = emailRef.current.value.trim();
     if (email === '') {
-      alert('Enter Your Email');
+      alert('Enter Your Email!');
       emailRef.current.focus();
       return false;
     }
     const result = await emailApi(email);
     console.log(result);
   }, [emailRef]);
-  console.log(emailRef);
   return (
     <Wrapper>
       <TextField
