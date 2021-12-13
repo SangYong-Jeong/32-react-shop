@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { color, Container, media } from '../../style';
+import styled, { color, Container, media, font } from '../../style';
 
 import ContactCp from './ContactCp';
 import MenuWrapCp from './MenuWrapCp';
@@ -10,6 +10,7 @@ import CardCp from './CardCp';
 const Wrapper = styled.footer`
   background-color: #1a1a1a;
   color: #fff;
+  font-family: ${font.en};
   padding: 4em 0;
 `;
 
