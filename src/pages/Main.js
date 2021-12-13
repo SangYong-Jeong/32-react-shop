@@ -23,7 +23,7 @@ const Main = () => {
     <Wrapper>
       <Container>
         <HeaderCp />
-        <BannerWrapperCp />
+        <BannerWrapperCp id="241" />
         <NoticeWrapperCp />
         <ParallaxCp id="242" />
         <PrdWrapperCp
@@ -38,7 +38,7 @@ const Main = () => {
       <Container>
         <InstaWrapperCp model="insta" id="245" />
         <FeaturedPrdWrapperCp title="Featured Products" />
-        <BrandCp />
+        <BrandCp boardId="3" />
       </Container>
       <FooterWrapperCp />
     </Wrapper>
