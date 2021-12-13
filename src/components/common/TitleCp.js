@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   line-height: 1.75em;
   font-size: 1.125em;
   font-weight: 500;
+  margin-bottom: 1em;
 `;
 
 const TitleCp = ({ txt, link }) => {

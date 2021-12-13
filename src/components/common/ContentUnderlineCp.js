@@ -5,7 +5,7 @@ import styled, { color, Underline } from '../../style';
 const Wrapper = styled(Underline)`
   display: inline-block;
   line-height: 1.25em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 `;
 
 const ContentUnderlineCp = ({ txt, link }) => {
