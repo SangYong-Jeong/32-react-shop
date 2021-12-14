@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `;
 
 const slideConfig = {
-  dots: true,
+  dots: false,
   infinite: true,
   autoplay: true,
   speed: 500,
