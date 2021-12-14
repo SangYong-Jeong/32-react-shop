@@ -6,7 +6,6 @@ import { brandApi } from '../../modules/api';
 const Wrapper = styled.div`
   background-color: #1e1f1c;
 `;
-
 const Brand = styled.div`
   margin: 6em 0 3em 0;
   padding: 0 1em;
