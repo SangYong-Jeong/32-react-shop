@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import withSnsWrapper from './withSnsWrapper';
-import styled, { Container, color, font } from '../../style';
+import styled, { Container, font } from '../../style';
 
 import InstaCp from './InstaCp';
 

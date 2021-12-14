@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { color, Container } from '../../style';
+import styled, { Container } from '../../style';
 
 import CardCp from './CardCp';
 

@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import styled from '../../style/index';
-import { css } from '@emotion/react';
+import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import axios from 'axios';
-
-const Wrapper = styled.div``;
 
 const queryClient = new QueryClient();
 

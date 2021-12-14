@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { color } from '../../style';
+import styled from '../../style';
 import convert from 'color-convert';
 
 const Wrapper = styled.div`

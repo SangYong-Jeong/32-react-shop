@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled, { css, font } from '../../style';
+import styled, { font, media } from '../../style';
 
 import NaviCp from './NaviCp';
 
@@ -8,6 +8,9 @@ const Wrapper = styled.ul`
   display: flex;
   font-family: ${font.en}, ${font.kr}, sans-serif;
   font-weight: 500;
+  @media ${media.md} {
+    display: none;
+  }
 `;
 
 const NaviWrapCp = () => {

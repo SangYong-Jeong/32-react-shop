@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { color } from '../../style';
+import styled from '../../style';
 
 import TitleCp from '../common/TitleCp';
 import ContentCp from '../common/ContentCp';

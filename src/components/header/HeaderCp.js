@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-
+import React from 'react';
 import styled from '../../style';
-import { getAllTree } from '../../store/reducers/tree-slice';
+
 import LogoCp from '../common/LogoCp';
 import NaviWrapCp from './NaviWrapCp';
 import MyPageCp from './MyPageCp';

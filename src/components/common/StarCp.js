@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled, { color, font, media } from '../../style';
+import React from 'react';
+import styled from '../../style';
 
 const Wrapper = styled.div`
   font-size: ${({ size }) => size + 'em'};

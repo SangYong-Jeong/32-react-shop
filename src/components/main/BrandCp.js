@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { media, Container } from '../../style';
+import styled, { Container } from '../../style';
 import Slider from 'react-slick';
 import { brandApi } from '../../modules/api';
 

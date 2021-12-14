@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import styled, { color } from '../../style';
+import styled from '../../style';
 
 const ColorWrap = styled.ul`
   display: flex;

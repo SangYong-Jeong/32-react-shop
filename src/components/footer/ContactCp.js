@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { color, css } from '../../style';
+import styled from '../../style';
 
 import LogoCp from '../common/LogoCp';
 import ContentCp from '../common/ContentCp';

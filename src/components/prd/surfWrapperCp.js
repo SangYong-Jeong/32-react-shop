@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled, { media, font, color } from '../../style';
+import styled, { media, font } from '../../style';
 
 import SurfCp from './SurfCp';
 

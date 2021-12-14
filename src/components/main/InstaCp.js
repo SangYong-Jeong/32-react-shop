@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { media, color, font, css } from '../../style';
+import styled, { font } from '../../style';
 
 import StarCp from '../common/StarCp';
 

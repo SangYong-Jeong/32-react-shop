@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { color } from '../../style';
+import styled from '../../style';
 
 let card = [];
 for (let i = 1; i <= 7; i++) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { media } from '../../style';
+import styled from '../../style';
 import Slider from 'react-slick';
 
 import withPrdWrapper from './withPrdWrapper';
