@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { Container } from '../../style';
+import styled, { Container, media } from '../../style';
 
 import CardCp from './CardCp';
 
@@ -13,9 +13,16 @@ const Wrap = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
-const Copyright = styled.div``;
+const Copyright = styled.div`
+  @media ${media.md} {
+    width: 100%;
+    margin-bottom: 2em;
+    font-size: 0.8em;
+  }
+`;
 
 const CopyrightCp = () => {
   return (
