@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from '../../style'
+import React from 'react';
+import styled from '../../style';
 
-import Home1 from '../../assets/img/home-service-1.png'
-import Home2 from '../../assets/img/home-service-2.png'
-import Home3 from '../../assets/img/home-service-3.png'
-import NoticeCp from './NoticeCp'
+import Home1 from '../../assets/img/home-service-1.png';
+import Home2 from '../../assets/img/home-service-2.png';
+import Home3 from '../../assets/img/home-service-3.png';
+import NoticeCp from './NoticeCp';
 
 const Wrapper = styled.section`
   background-color: #f5f5f5;
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 const notice = [
   {
@@ -34,7 +34,7 @@ const notice = [
     link: '/board/3',
     button: 'Learn how',
   },
-]
+];
 
 const NoticeWrapperCp = () => {
   return (
@@ -43,7 +43,7 @@ const NoticeWrapperCp = () => {
         <NoticeCp {...notice[i]} key={i} />
       ))}
     </Wrapper>
-  )
-}
+  );
+};
 
-export default React.memo(NoticeWrapperCp)
+export default React.memo(NoticeWrapperCp);
