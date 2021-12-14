@@ -14,8 +14,8 @@ const Wrapper = styled.section`
 const TitleWrap = styled.div`
   text-align: center;
   color: ${color.dark};
-  transform: translateY(-6.5em);
   font-family: ${font.en};
+  margin-bottom: 3em;
 `;
 
 const Title = styled.h2`

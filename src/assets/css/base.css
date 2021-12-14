@@ -202,3 +202,12 @@ a {
   opacity: 0.875;
   color: #0075c3;
 }
+
+.slick-prev {
+  left: 10px !important;
+  z-index: 999;
+}
+.slick-next {
+  right: 10px !important;
+  z-index: 999;
+}

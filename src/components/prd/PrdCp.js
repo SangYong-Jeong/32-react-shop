@@ -139,7 +139,7 @@ const PrdCp = ({
       setColorName(_name);
       setColorCode(_color);
       // 보여주기
-      if (_id == 0) setImgSrc(ProductFiles[0].saveName);
+      if (_id === 0) setImgSrc(ProductFiles[0].saveName);
       else if (_id < 4) setImgSrc(ProductFiles[Number(_id) + 1].saveName);
       else setImgSrc(ProductFiles[4].saveName);
     },
