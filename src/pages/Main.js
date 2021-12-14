@@ -38,8 +38,8 @@ const Main = () => {
       <Container>
         <InstaWrapperCp model="insta" id="245" />
         <FeaturedPrdWrapperCp title="Featured Products" />
-        <BrandCp boardId="3" />
       </Container>
+      <BrandCp boardId="3" />
       <FooterWrapperCp />
     </Wrapper>
   );
