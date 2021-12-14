@@ -26,6 +26,16 @@ const BannerWrapperCp = ({ id }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     dotsClass: 'slick-dots-banner',
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          dots: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <Wrapper>
